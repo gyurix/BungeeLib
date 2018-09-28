@@ -1,0 +1,27 @@
+en:
+  bungeelib:
+    command:
+      noconsole: &cThis command can only be used by players.
+      wrongplayer: &cPlayer &e<player>&c is not online.
+      wrongarg: &cThe entered &e<type>&c, &e<value>&c is incorrect.
+      toolow: &cThe entered &e<type>&c should be at least &e<value>&c.
+      toohigh: &cThe entered &e<type>&c should be at most &e<value>&c.
+      usage: &cUsage:&e <usage>
+    time:
+      d: <d> day
+      dp: <d> days
+      h: <h> hour
+      hp: <h> hours
+      m: <m> minute
+      marks:
+        d: d, day, days
+        h: h, hour, hours
+        m: m, min, mins, minutes
+        s: s, sec, secs, second, seconds
+        w: w, week, weeks
+      mp: <m> minutes
+      never: never
+      s: <s> second
+      sp: <s> seconds
+      w: <w> week
+      wp: <w> weeks
