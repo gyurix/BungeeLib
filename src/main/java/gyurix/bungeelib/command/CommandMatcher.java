@@ -153,12 +153,12 @@ public class CommandMatcher {
         for (int i = 0; i < parameters.length; ++i) {
             Equals eq = parameters[i].getAnnotation(Equals.class);
             if (eq != null && !(eq.ignoreCase() ? args[i].equalsIgnoreCase(eq.value()) : args[i].equals(eq.value()))) {
-                lang.msg("", sender, "command.wrongarg", "type", parameters[i].getName(), "value", args[i]);
+                lang.msg("", sender, "command.wrongarg", "type", getParameterName(parameters[i]), "value", args[i]);
                 return;
             }
             Object res = convert(args[i], parameters[i].getParameterizedType());
             if (res == null) {
-                lang.msg("", sender, "command.wrongarg", "type", parameters[i].getName(), "value", args[i]);
+                lang.msg("", sender, "command.wrongarg", "type", getParameterName(parameters[i]), "value", args[i]);
                 return;
             }
             ArgRange as = parameters[i].getAnnotation(ArgRange.class);
@@ -166,11 +166,11 @@ public class CommandMatcher {
                 Comparable min = (Comparable) convert(as.min(), parameters[i].getParameterizedType());
                 Comparable max = (Comparable) convert(as.min(), parameters[i].getParameterizedType());
                 if (min.compareTo(res) > 0) {
-                    lang.msg("", sender, "command.toolow", "type", parameters[i].getName(), "value", min);
+                    lang.msg("", sender, "command.toolow", "type", getParameterName(parameters[i]), "value", min);
                     return;
                 }
                 if (max.compareTo(res) < 0) {
-                    lang.msg("", sender, "command.toohigh", "type", parameters[i].getName(), "value", max);
+                    lang.msg("", sender, "command.toohigh", "type", getParameterName(parameters[i]), "value", max);
                     return;
                 }
             }

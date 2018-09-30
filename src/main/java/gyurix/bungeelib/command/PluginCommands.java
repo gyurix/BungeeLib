@@ -40,19 +40,20 @@ public class PluginCommands {
                 break;
             }
         }
+        boolean async = false;
+        for (CommandMatcher m : matchers) {
+            if (m.isAsync()) {
+                async = true;
+                break;
+            }
+        }
+        boolean finalAsync = async;
         BU.pm.registerCommand(pl, new Command(cmd,
                 pl.getDescription().getName().toLowerCase() + "." + cmd,
                 aliases) {
             @Override
             public void execute(CommandSender sender, String[] args) {
-                boolean async = false;
-                for (CommandMatcher m : matchers) {
-                    if (m.isAsync()) {
-                        async = true;
-                        break;
-                    }
-                }
-                if (async)
+                if (finalAsync)
                     BU.sch.runAsync(pl, () -> executeNow(sender, args));
                 else
                     executeNow(sender, args);

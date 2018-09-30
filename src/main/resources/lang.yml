@@ -7,6 +7,7 @@ en:
       toolow: &cThe entered &e<type>&c should be at least &e<value>&c.
       toohigh: &cThe entered &e<type>&c should be at most &e<value>&c.
       usage: &cUsage:&e <usage>
+      wrongsub: &cThe entered subcommand is incorrect.
     time:
       d: <d> day
       dp: <d> days
