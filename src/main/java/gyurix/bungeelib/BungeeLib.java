@@ -3,7 +3,7 @@ package gyurix.bungeelib;
 
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
-import gyurix.bungeelib.command.CommandMatcher;
+import gyurix.bungeelib.command.plugin.CommandMatcher;
 import gyurix.bungeelib.configfile.DefaultSerializers;
 import gyurix.bungeelib.json.JsonAPI;
 import net.md_5.bungee.BungeeCord;

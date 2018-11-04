@@ -1,4 +1,4 @@
-package gyurix.bungeelib.command;
+package gyurix.bungeelib.command.plugin;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.PARAMETER, ElementType.TYPE})
-public @interface Async {
-    boolean async() default true;
+@Target(ElementType.TYPE)
+public @interface SubOf {
+    String value();
 }

@@ -1,13 +1,14 @@
 en:
   bungeelib:
     command:
+      noperm: &cYou don't have permission for using this command.
+      wrongsub: &cThe entered subcommand is incorrect.
       noconsole: &cThis command can only be used by players.
       wrongplayer: &cPlayer &e<player>&c is not online.
-      wrongarg: &cThe entered &e<type>&c, &e<value>&c is incorrect.
+      wrongarg: &cThe entered &e<type>&c (&6<value>&c) is incorrect.
       toolow: &cThe entered &e<type>&c should be at least &e<value>&c.
       toohigh: &cThe entered &e<type>&c should be at most &e<value>&c.
-      usage: &cUsage:&e <usage>
-      wrongsub: &cThe entered subcommand is incorrect.
+      usage: &cPossible Usages:&e
     time:
       d: <d> day
       dp: <d> days

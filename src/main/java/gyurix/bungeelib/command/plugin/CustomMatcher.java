@@ -1,4 +1,4 @@
-package gyurix.bungeelib.command;
+package gyurix.bungeelib.command.plugin;
 
 import java.lang.reflect.Type;
 
