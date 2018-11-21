@@ -6,9 +6,11 @@ import com.google.common.io.ByteStreams;
 import gyurix.bungeelib.command.plugin.CommandMatcher;
 import gyurix.bungeelib.configfile.DefaultSerializers;
 import gyurix.bungeelib.json.JsonAPI;
+import gyurix.bungeelib.protocol.ProtocolAPI;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PluginMessageEvent;
+import net.md_5.bungee.api.event.PreLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.command.ConsoleCommandSender;
@@ -35,6 +37,7 @@ public class BungeeLib extends Plugin implements Listener {
         cs = ConsoleCommandSender.getInstance();
         pm = bc.getPluginManager();
         pm.registerListener(this, this);
+        pa = new ProtocolAPI();
         sch = bc.getScheduler();
         DefaultSerializers.init();
         CommandMatcher.registerCustomMatchers();
@@ -42,6 +45,10 @@ public class BungeeLib extends Plugin implements Listener {
 
     @Override
     public void onDisable() {
+
+    }
+
+    public void onPreLogin(PreLoginEvent e) {
 
     }
 

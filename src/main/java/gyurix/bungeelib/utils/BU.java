@@ -1,6 +1,7 @@
 package gyurix.bungeelib.utils;
 
 import gyurix.bungeelib.BungeeLib;
+import gyurix.bungeelib.protocol.ProtocolAPI;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -40,6 +41,11 @@ public final class BU {
      * The main instance of the PluginManager object.
      */
     public static PluginManager pm;
+
+    /**
+     * The main instance of BungeeLib ProtocolAPI
+     */
+    public static ProtocolAPI pa;
     /**
      * An instance of the Random number generator
      */
@@ -164,12 +170,6 @@ public final class BU {
         cs.sendMessage('[' + pl.getDescription().getName() + "] " + StringUtils.join(msg, ", "));
     }
 
-    /**
-     * Optimizes color and formatting code usage in a string by removing redundant color/formatting codes
-     *
-     * @param in input message containing color and formatting codes
-     * @return The color and formatting code optimized string
-     */
 
     /**
      * Logs messages from the given plugin. You can use color codes in the msg.

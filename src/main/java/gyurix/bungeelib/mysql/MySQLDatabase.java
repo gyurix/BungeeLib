@@ -72,7 +72,8 @@ public class MySQLDatabase {
     private PreparedStatement prepare(String cmd, Object... args) throws Throwable {
         PreparedStatement st = getConnection().prepareStatement(cmd);
         for (int i = 0; i < args.length; ++i)
-            st.setObject(i + 1, args[i]);
+            st.setObject(i + 1, args[i] instanceof Enum ? ((Enum) args[i]).name() :
+                    String.valueOf(args[i]));
         return st;
     }
 
