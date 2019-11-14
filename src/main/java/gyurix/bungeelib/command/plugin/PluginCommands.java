@@ -1,6 +1,7 @@
 package gyurix.bungeelib.command.plugin;
 
 import gyurix.bungeelib.utils.BU;
+import lombok.SneakyThrows;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -132,6 +133,13 @@ public class PluginCommands {
 
         public ExtendedCommandExecutor(String name, String permission, String... aliases) {
             super(name, permission, aliases);
+        }
+    }
+
+    @SneakyThrows
+    public static void registerCommands(Plugin pl, Class... classes) {
+        for (Class c : classes) {
+            new PluginCommands(pl, c.newInstance());
         }
     }
 }
