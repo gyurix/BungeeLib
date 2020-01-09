@@ -27,6 +27,7 @@ public class DefaultSerializers {
         ConfigSerialization.serializers.put(ConfigData.class, new ConfigDataSerializer());
 
         NumberSerializer numberSerializer = new NumberSerializer();
+        MapSerializer mapSerializer = new MapSerializer();
         ConfigSerialization.serializers.put(Byte.class, numberSerializer);
         ConfigSerialization.serializers.put(Short.class, numberSerializer);
         ConfigSerialization.serializers.put(Integer.class, numberSerializer);
@@ -37,10 +38,11 @@ public class DefaultSerializers {
         ConfigSerialization.serializers.put(Character.class, new CharacterSerializer());
         ConfigSerialization.serializers.put(Array.class, new ArraySerializer());
         ConfigSerialization.serializers.put(Collection.class, new CollectionSerializer());
-        ConfigSerialization.serializers.put(Map.class, new MapSerializer());
+        ConfigSerialization.serializers.put(Map.class, mapSerializer);
         ConfigSerialization.serializers.put(Object.class, new ObjectSerializer());
         ConfigSerialization.serializers.put(Pattern.class, new PatternSerializer());
         ConfigSerialization.serializers.put(SimpleDateFormat.class, new SimpleDateFormatSerializer());
+        ConfigSerialization.serializers.put(Map.Entry.class, mapSerializer);
 
         ConfigSerialization.aliases.put(String.class, "str");
         ConfigSerialization.aliases.put(UUID.class, "uuid");
@@ -62,6 +64,8 @@ public class DefaultSerializers {
         ConfigSerialization.aliases.put(LinkedHashMap.class, "<L>");
         ConfigSerialization.aliases.put(TreeMap.class, "<T>");
         ConfigSerialization.aliases.put(Object.class, "?");
+        ConfigSerialization.aliases.put(Map.Entry.class, "<KV>");
+
         ConfigSerialization.interfaceBasedClasses.put(List.class, ArrayList.class);
         ConfigSerialization.interfaceBasedClasses.put(Set.class, HashSet.class);
         ConfigSerialization.interfaceBasedClasses.put(Map.class, HashMap.class);
