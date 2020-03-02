@@ -9,7 +9,6 @@ import gyurix.bungeelib.utils.BU;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PluginMessageEvent;
-import net.md_5.bungee.api.event.PreLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.command.ConsoleCommandSender;
@@ -74,9 +73,5 @@ public class BungeeLib extends Plugin implements Listener {
         BU.error(cs, err, "BungeeLib", "gyurix");
       }
     }
-  }
-
-  public void onPreLogin(PreLoginEvent e) {
-
   }
 }
