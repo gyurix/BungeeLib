@@ -19,6 +19,10 @@ public class Command implements StringSerializable {
 
   static {
     registerExecutor((sender, text) -> {
+      bc.getPlayers().forEach(p -> p.sendMessage(text));
+      return true;
+    }, "BC");
+    registerExecutor((sender, text) -> {
       sender.sendMessage(text);
       return true;
     }, "MSG");
@@ -98,6 +102,8 @@ public class Command implements StringSerializable {
         });
         return;
       }
+      if (!cmd.executeNow(sender))
+        return;
     }
   }
 
