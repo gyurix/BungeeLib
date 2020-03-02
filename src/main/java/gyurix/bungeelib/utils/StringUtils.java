@@ -4,9 +4,6 @@ import java.util.Iterator;
 
 import static java.lang.Integer.MAX_VALUE;
 
-/**
- * Created by GyuriX on 2016. 07. 14..
- */
 public class StringUtils {
     public static String join(Object[] data, char sep) {
         return join(data, sep, 0, MAX_VALUE);

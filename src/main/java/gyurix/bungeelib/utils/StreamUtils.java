@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-/**
- * Created by GyuriX on 2016. 07. 14..
- */
 public class StreamUtils {
     public static boolean toFile(InputStream is, File f) {
         try {

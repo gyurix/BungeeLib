@@ -1,6 +1,8 @@
 package gyurix.bungeelib.command.plugin;
 
+import com.google.common.collect.ImmutableList;
 import gyurix.bungeelib.utils.BU;
+import lombok.SneakyThrows;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -14,9 +16,9 @@ import java.util.TreeSet;
 
 import static gyurix.bungeelib.BungeeLib.lang;
 import static gyurix.bungeelib.utils.BU.error;
-import static java.util.Collections.EMPTY_LIST;
 
 public class PluginCommands {
+  private static final List<String> EMPTY_LIST = ImmutableList.of();
   private static final String[] emptyStringArray = new String[0];
 
   public PluginCommands(Plugin pl, Object executor) {
@@ -90,6 +92,13 @@ public class PluginCommands {
         return exec.onTabComplete(sender, subArgs);
       }
     });
+  }
+
+  @SneakyThrows
+  public static void registerCommands(Plugin pl, Class<?>... classes) {
+    for (Class<?> c : classes) {
+      new PluginCommands(pl, c.newInstance());
+    }
   }
 
   private ExtendedCommandExecutor createExecutor(Plugin pl, String cmd, CommandMatcher m) {

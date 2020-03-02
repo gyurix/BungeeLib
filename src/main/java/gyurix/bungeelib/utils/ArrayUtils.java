@@ -3,9 +3,6 @@ package gyurix.bungeelib.utils;
 import java.lang.reflect.Array;
 import java.util.Objects;
 
-/**
- * Created by GyuriX on 2016. 07. 14..
- */
 public class ArrayUtils {
     public static final Class[] EMPTY_CLASS_ARRAY = new Class[0];
     public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];

@@ -28,7 +28,7 @@ public class VariableAPI {
     /**
      * Available VariableHandlers
      */
-    private static final HashMap<String, VariableHandler> handlers = new HashMap();
+    private static final HashMap<String, VariableHandler> handlers = new HashMap<>();
     /**
      * List of placeholders, which were used in messages, but does not have a handler
      * Since this is a high frequently used API, this field is required to only show a missing
@@ -95,7 +95,7 @@ public class VariableAPI {
         }
         //Add remaining text to the output
         if (placeholderStart < msg.length())
-            out.add(msg.substring(placeholderStart, msg.length()));
+            out.add(msg.substring(placeholderStart));
 
         //Make sure the first element of the output will be the index of the last character of the message
         out.add(0, msg.length() - 1);
@@ -124,7 +124,7 @@ public class VariableAPI {
             if (nameParamsSep != -1) {
 
                 //Split it to placeholder name and placeholder parameters
-                nameBuilder.append(placeholder.substring(0, nameParamsSep));
+                nameBuilder.append(placeholder, 0, nameParamsSep);
                 ArrayList<Object> parameters = new ArrayList<>(inside.subList(readPos + 1, listSize));
                 parameters.add(0, placeholder.substring(nameParamsSep + 1));
 

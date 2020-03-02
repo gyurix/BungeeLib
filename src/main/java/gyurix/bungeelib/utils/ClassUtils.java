@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/**
- * Created by GyuriX on 2016. 07. 14..
- */
 public class ClassUtils {
     public static final ReflectionFactory rf = ReflectionFactory.getReflectionFactory();
     private static final HashMap<Class, Field[]> allFieldsCache = new HashMap<>();
