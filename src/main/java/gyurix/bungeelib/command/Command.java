@@ -1,6 +1,7 @@
 package gyurix.bungeelib.command;
 
 import gyurix.bungeelib.api.VariableAPI;
+import gyurix.bungeelib.chat.ChatTag;
 import gyurix.bungeelib.configfile.ConfigSerialization.StringSerializable;
 import gyurix.bungeelib.utils.BU;
 import net.md_5.bungee.api.CommandSender;
@@ -19,11 +20,11 @@ public class Command implements StringSerializable {
 
   static {
     registerExecutor((sender, text) -> {
-      bc.getPlayers().forEach(p -> p.sendMessage(text));
+      bc.getPlayers().forEach(p -> p.sendMessage(ChatTag.fromExtraText(text).toBaseComponent()));
       return true;
     }, "BC");
     registerExecutor((sender, text) -> {
-      sender.sendMessage(text);
+      sender.sendMessage(ChatTag.fromExtraText(text).toBaseComponent());
       return true;
     }, "MSG");
     registerExecutor((sender, text) -> {
